@@ -1,0 +1,35 @@
+function getPhoneNumber()
+{
+    var checkVaild = false;
+    var checkNumber = 0;
+    
+    while (checkVaild == false)
+        {
+            var inputNumber = prompt("Insert Cell Phone Number: ");
+            if(inputNumber.length == 7)
+                {
+                    for(var i = 0; i < inputNumber.length; i++)
+                        {
+                            if(inputNumber.charAt(i) < 10)
+                                {
+                                    checkNumber++;
+                                    if(checkNumber == 7)
+                                        {
+                                            console.log("Thanks for input your Number\n" + inputNumber.slice(0, 3) + "-" + inputNumber.slice(3));
+                                            checkVaild = true;
+                                        }
+                                }
+                            else
+                                {
+                                    alert("Insert wrong number.");
+                                    checkNumber = 0;
+                                    break;
+                                }
+                        }
+                }
+            else
+                alert("Insert too much number or wrong number.");
+        }
+}
+
+getPhoneNumber();
